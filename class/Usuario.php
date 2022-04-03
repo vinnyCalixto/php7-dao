@@ -2,40 +2,42 @@
 
 class Usuario {
 
+	//colunas do banco de dados
 	private $idusuario;
 	private $deslogin;
 	private $dessenha;
 	private $dtcadastro;
 
-	public function getIdusuario(){
+	//
+	public function getIdusuario(){//Getters dão acesso público a dados privados.
 		return $this->idusuario;
 	}
 
-	public function setIdusuario($value){
+	public function setIdusuario($value){//Setters permitem que uma variável privada seja modificada.
 		$this->idusuario = $value;
 	}
 
-	public function getDeslogin(){
+	public function getDeslogin(){//Getters dão acesso público a dados privados.
 		return $this->deslogin;
 	}
 
-	public function setDeslogin($value){
+	public function setDeslogin($value){//Setters permitem que uma variável privada seja modificada.
 		$this->deslogin = $value;
 	}
 
-	public function getDessenha(){
+	public function getDessenha(){//Getters dão acesso público a dados privados.
 		return $this->dessenha;
 	}
 
-	public function setDessenha($value){
+	public function setDessenha($value){//Setters permitem que uma variável privada seja modificada.
 		$this->dessenha = $value;
 	}
 
-	public function getDtcadastro(){
+	public function getDtcadastro(){//Getters dão acesso público a dados privados.
 		return $this->dtcadastro;
 	}
 
-	public function setDtcadastro($value){
+	public function setDtcadastro($value){//Setters permitem que uma variável privada seja modificada.
 		$this->dtcadastro = $value;
 	}
 	
@@ -125,7 +127,7 @@ class Usuario {
 
 		$sql = new Sql();
 
-		$sql->query("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
+		$sql->run("UPDATE tb_usuarios SET deslogin = :LOGIN, dessenha = :PASSWORD WHERE idusuario = :ID", array(
 			':LOGIN'=>$this->getDeslogin(),
 			':PASSWORD'=>$this->getDessenha(),
 			':ID'=>$this->getIdusuario()
@@ -137,7 +139,7 @@ class Usuario {
 
 		$sql = new Sql();
 
-		$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+		$sql->run("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
 			':ID'=>$this->getIdusuario()
 		));
 

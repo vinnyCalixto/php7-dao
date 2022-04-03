@@ -2,17 +2,17 @@
 
 require_once("config.php");
 
-$sql = new Sql();
+/*$sql = new Sql();
 
 $usuarios = $sql->select("SELECT * FROM tb_usuarios");
 
-echo json_encode($usuarios);
+echo json_encode($usuarios);*/
 
 
 //Carrega um usuário
-//$root = new Usuario();
-//$root->loadbyId(3);
-//echo $root;
+$root = new Usuario();
+$root->loadbyId(5);
+echo $root;
 
 //Carrega uma lista de usuários
 //$lista = Usuario::getList();
@@ -46,9 +46,9 @@ echo $usuario;
 
 /*$usuario = new Usuario();
 
-$usuario->loadById(7);
+$usuario->getList();
 
-$usuario->delete();
+//$usuario->delete();
 
 echo $usuario;*/
  ?>
